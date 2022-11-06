@@ -1,4 +1,6 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php'; 
+ 
+?>
 <head>
     <!-- our css -->
     <link
@@ -29,7 +31,19 @@
                                     <button name="login" type="submit" class="btn btn-outline-primary">LOGIN</button>
                                 </div>
                             </div>
+                            <?php 
+                          if(isset($_GET["error"])){
+                            if($_GET["error"] == "emptyinput"){
+                                echo "<p>Fill in all Fields!</p>";
+                            }else if($_GET["error"]== "invalidusername"){
+                                echo "<p>invalid username!</p>";
+                            }else if ($_GET["error"]=="invalidPassword"){
+                                echo "<p>invalid Password!</p>";
+                            }
+                          }
+                        ?>
                         </form>
+                        
                     </div>
             </div>
         </div>

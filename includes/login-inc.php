@@ -1,5 +1,5 @@
 <?php 
-if (isset($_POST["login"])){
+if (isset($_POST["submit"])){
     $username = $_POST["username"];
     $password = $_POST["password"];
 
@@ -19,7 +19,8 @@ if (isset($_POST["login"])){
      exit();
     }
 
-    createUser($conn, $username, $password);
+    loginUser($conn, $username, $password);
+    
 }
 else {
     header("location: ../adminloginPage.php");
