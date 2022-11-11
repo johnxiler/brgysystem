@@ -15,23 +15,18 @@
     />
   </head>
   <body>
-    <div>
+
+  <header>
+    <div class="container">
      <img
         id="logo"
         src="static/images/logo.png"
         alt="brgyviilogo"
       /> 
-      <p class="title">Barangay VII Management System</p>
+      <p id="title">Barangay VII Management System</p>
     </div>
     <div class="navbar">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-      >
-        <span> class="navbar icon"</span>
-        <div class="navbar" id="navbar">
+      <div class="navbar" id="navbar">
         <div class="navbar-nav">
           <a class="navbar-items" href="index.php" id="home">Home</a>
           <a class="navbar-items" href="adminloginPage.php" id="adminlogin"
@@ -40,7 +35,7 @@
           <a class="navbar-items" href="contact.php" id="contact">Contact</a>
           <a class="navbar-items" href="about.php" id="about">About</a>
         </div>
-      </button>
-      
       </div>
     </div>
+  </header>  
+    

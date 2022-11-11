@@ -1,4 +1,7 @@
-<?php include_once 'header.php'; ?>
+<?php 
+session_start();  
+include 'header.php'; 
+?>
 <head>
     <!-- our css -->
     <link
@@ -6,35 +9,47 @@
       rel="stylesheet"
     />
 </head>
-<div class="container">
-        <div class="row">
-            <div class="login-box">
-                <div class="login-key">
-                    <i class="fa fa-key" aria-hidden="true"></i>
-                </div>
-                <div class="login-title">
-                    ADMIN PANEL
-                </div>
-                    <div class="login-form">
-                        <form action="includes/login-inc.php" method="post">
-                            <div class="form-group">
-                                <label class="form-control-label">USERNAME</label>
-                                <input name= "username" type="text" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-control-label">PASSWORD</label>
-                                <input name="password" type="password" class="form-control" i>
-                            </div>
+<?php
 
-                            <div class="col-lg-12 loginbttm">
-                                <div class="col-lg-6 login-btm login-text">
-                                    <!-- Error Message -->
-                                </div>
-                                <div class="col-lg-6 login-btm login-button">
-                                    <button name="login" type="submit" class="btn btn-outline-primary">LOGIN</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-            </div>
-        </div>
+?>
+<body>  
+    <div id = "frm">
+        <form name="f1" action = "../dashboard.php" onsubmit = "return validation()" method = "POST">  
+            <p>  
+                <label> UserName: </label>  
+                <input type = "text" id ="user" name  = "user" />  
+            </p>  
+            <p>  
+                <label> Password: </label>  
+                <input type = "password" id ="pass" name  = "pass" />  
+            </p>  
+            <p>     
+                <input type =  "submit" id = "btn" value = "Login" />  
+                <!-- <a href="dashboard.php" >Login</a> -->
+            </p>  
+        </form>  
+    </div>  
+    <!--validation for empty field-->   
+    <script>  
+            function validation()  
+            {  
+                var id=document.f1.user.value;  
+                var ps=document.f1.pass.value;  
+                if(id.length=="" && ps.length=="") {  
+                    alert("User Name and Password fields are empty");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if(id.length=="") {  
+                        alert("User Name is empty");  
+                        return false;  
+                    }   
+                    if (ps.length=="") {  
+                    alert("Password field is empty");  
+                    return false;  
+                    }  
+                }                             
+            }  
+        </script>  
+</body>     
